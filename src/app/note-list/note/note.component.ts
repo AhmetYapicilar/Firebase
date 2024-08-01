@@ -38,11 +38,11 @@ export class NoteComponent {
   }
 
   moveToTrash(){
-    this.note.type = 'trash';
+    this.note.type = 'Trash';
   }
 
   moveToNotes(){
-    this.note.type = 'note';
+    this.note.type = 'Note';
   }
 
   deleteNote(){

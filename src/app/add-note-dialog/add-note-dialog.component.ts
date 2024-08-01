@@ -16,7 +16,7 @@ export class AddNoteDialogComponent {
   title = "";
   description = "";
 
-  constructor(public noteService: NoteListService){}
+  constructor(private noteService: NoteListService){}
 
   closeDialog() {
     this.title = "";
@@ -25,7 +25,14 @@ export class AddNoteDialogComponent {
   }
 
   addNote(){
-    //beachte das closeDialog() zum Schluss kommt, denn es leert die Variablen
+    let note: Note = {
+      id: "abc",
+    type: "Note",
+    title: this.title,
+    content: this.description,
+    marked: false
+    }
+    this.noteService.addNote(note)
     this.closeDialog();
   }
 }
